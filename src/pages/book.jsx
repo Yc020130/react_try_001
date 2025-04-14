@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "./BookTracker.css"; // 你之前的样式文件
+import "./BookTracker.css"; // 样式文件（你已有）
 
 const BookTracker = () => {
-  const [books, setBooks] = useState([]);
-  const [bookTitle, setBookTitle] = useState("");
-  const [bookPages, setBookPages] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+    const [books, setBooks] = useState(() => {
+        const storedBooks = localStorage.getItem("books");
+        return storedBooks ? JSON.parse(storedBooks) : [];
+    });
+    const [bookTitle, setBookTitle] = useState("");
+    const [bookPages, setBookPages] = useState("");
+    const [bookLink, setBookLink] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
-  // 初次加载时，从 localStorage 中读取数据
+  // 初始化读取 localStorage
   useEffect(() => {
     const storedBooks = localStorage.getItem("books");
     if (storedBooks) {
@@ -15,14 +19,13 @@ const BookTracker = () => {
     }
   }, []);
 
-  // books 变化时，写入 localStorage
+  // books 更新时写入 localStorage
   useEffect(() => {
-    if (books.length > 0) {
-      localStorage.setItem("books", JSON.stringify(books));
-    }
+    localStorage.setItem("books", JSON.stringify(books));
   }, [books]);
   
 
+  // 添加书籍
   const handleAddBook = () => {
     if (bookTitle.trim() && bookPages.trim()) {
       const newBook = {
@@ -30,17 +33,22 @@ const BookTracker = () => {
         title: bookTitle,
         pages: bookPages,
         status: "未读",
+        link: bookLink, // ✅ 加上 link 字段
       };
       setBooks([...books, newBook]);
       setBookTitle("");
       setBookPages("");
+      setBookLink("");
     }
   };
+  
 
+  // 删除书籍
   const handleDeleteBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
 
+  // 切换状态
   const handleStatusToggle = (id) => {
     setBooks(
       books.map((book) =>
@@ -51,6 +59,7 @@ const BookTracker = () => {
     );
   };
 
+  // 修改页数
   const handlePageChange = (id) => {
     const newPages = prompt("请输入新的页数");
     if (newPages) {
@@ -62,7 +71,7 @@ const BookTracker = () => {
     }
   };
 
-  // 过滤书籍
+  // 搜索过滤
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -78,6 +87,7 @@ const BookTracker = () => {
         {books.filter((b) => b.status === "未读").length} 本
       </p>
 
+      {/* 添加表单 */}
       <div className="book-form">
         <input
           type="text"
@@ -91,6 +101,12 @@ const BookTracker = () => {
           value={bookPages}
           onChange={(e) => setBookPages(e.target.value)}
         />
+        <input
+          type="text"
+          placeholder="书籍链接（可选）"
+          value={bookLink}
+          onChange={(e) => setBookLink(e.target.value)}
+        />
         <button onClick={handleAddBook}>添加</button>
       </div>
 
@@ -102,11 +118,20 @@ const BookTracker = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
+      {/* 书籍列表 */}
       <ul className="book-list">
         {filteredBooks.map((book) => (
           <li key={book.id} className="book-item">
             <div>
-              <strong>{book.title}</strong> - {book.pages} 页 [{book.status}]
+              <a
+                href={book.link || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="book-link"
+              >
+                {book.title}
+              </a>{" "}
+              - {book.pages} 页 [{book.status}]
             </div>
             <div className="book-actions">
               <button onClick={() => handleStatusToggle(book.id)}>
