@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+/* App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f6f8fa;
+  color: #24292e;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-header {
+  background-color: #24292f;
+  padding: 1rem;
+  border-radius: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-title {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.app-nav {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.app-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  background-color: #0366d6;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.app-nav a:hover {
+  background-color: #005cc5;
+}
+
+.app-main {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.1);
+  margin-top: 1rem;
+}
+
+.section-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* 每道题目的卡片样式 */
+.question-card {
+  background-color: #f1f8ff;
+  padding: 1rem;
+  border: 1px solid #c8e1ff;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(27, 31, 35, 0.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.question-title {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  color: #0366d6;
 }

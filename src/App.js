@@ -1,5 +1,7 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css'; // 新增样式文件
 
 // 页面组件
 import AgeApp from './pages/age.jsx';
@@ -14,48 +16,82 @@ import ScoreList from './pages/ScoreList.jsx';
 import AddNameList from './pages/AddNameList.jsx';
 import DeleteNameList from './pages/deleteNameList.jsx';
 import TestPage from './pages/TestPage.jsx';
-import BookTracker from './pages/book.jsx' // 新增的测试题页面
+import BookTracker from './pages/book.jsx';
+import TaskList from './pages/missioncontorl.jsx';
 
 const App = () => {
   return (
     <Router>
-      <div>
-        <h1>React学习</h1>
-        <nav>
-          <Link to="/">主页面</Link> | <Link to="/tests">章节测试</Link> | <Link to="/book">读书追踪项目练习</Link>
-        </nav>
+      <div className="app-container">
+        <header className="app-header">
+          <h1 className="app-title">React 学习</h1>
+          <nav className="app-nav">
+            <Link to="/">主页面</Link>
+            <Link to="/tests">章节测试</Link>
+            <Link to="/book">读书追踪项目练习</Link>
+            <Link to="/task">任务清单项目练习</Link>
+          </nav>
+        </header>
 
-        <Routes>
-          <Route path="/" element={
-            <div>
-              <p style={{color:'red'}}>第一题</p>
-              <AgeApp />
-              <p style={{color:'red'}}>第二题</p>
-              <UserCard />
-              <p style={{color:'red'}}>第三题</p>
-              <ToggleText />
-              <p style={{color:'red'}}>第四题</p>
-              <Hider />
-              <p style={{color:'red'}}>第五题</p>
-              <Inputer />
-              <p style={{color:'red'}}>第六题</p>
-              <InputColor />
-              <p style={{color:'red'}}>第七题</p>
-              <InputColor2 />
-              <p style={{color:'red'}}>第八题</p>
-              <NameList />
-              <p style={{color:'red'}}>☆第九题</p>
-              <ScoreList />
-              <p style={{color:'red'}}>☆第十题</p>
-              <AddNameList />
-              <p style={{color:'red'}}>☆第十一题</p>
-              <DeleteNameList />
-            </div>
-          } />
-          
-          <Route path="/tests" element={<TestPage />} />
-          <Route path="/book" element={<BookTracker />} />
-        </Routes>
+        <main className="app-main">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="section-list">
+                  <div className="question-card">
+                    <p className="question-title">第一题</p>
+                    <AgeApp />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第二题</p>
+                    <UserCard />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第三题</p>
+                    <ToggleText />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第四题</p>
+                    <Hider />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第五题</p>
+                    <Inputer />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第六题</p>
+                    <InputColor />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第七题</p>
+                    <InputColor2 />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">第八题</p>
+                    <NameList />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">☆第九题</p>
+                    <ScoreList />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">☆第十题</p>
+                    <AddNameList />
+                  </div>
+                  <div className="question-card">
+                    <p className="question-title">☆第十一题</p>
+                    <DeleteNameList />
+                  </div>
+                </div>
+              }
+            />
+
+            <Route path="/tests" element={<TestPage />} />
+            <Route path="/book" element={<BookTracker />} />
+            <Route path="/task" element={<TaskList />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
