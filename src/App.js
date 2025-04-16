@@ -25,9 +25,10 @@ const App = () => {
       <div className='app'>
       <div className="app-container">
         <header className="app-header">
-          <h1 className="app-title">React 学习</h1>
+          <h1 className="app-title">Personal Develop</h1>
+          <p className='p1'>Welcome Jared's Study Zone😎</p>
           <nav className="app-nav">
-            <Link to="/">主页面</Link>
+            <Link to="/">练习题</Link>
             <Link to="/tests">章节测试</Link>
             <Link to="/book">读书追踪项目练习</Link>
             <Link to="/task">任务清单项目练习</Link>

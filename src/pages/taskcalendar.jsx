@@ -31,6 +31,7 @@ const TaskCalendar = ({ stats }) => {
         })}
         gutterSize={1}
         showWeekdayLabels={false}
+        
         squareSize={5}
       />
     </div>
