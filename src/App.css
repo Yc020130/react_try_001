@@ -1,4 +1,13 @@
 /* App.css */
+.app {
+  min-height: 100vh;
+  background-image: url('/public/bg2.gif'); /* 注意路径写法：public 下直接 / */
+  background-size: cover;          /* 或者 contain, 看你效果需求 */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

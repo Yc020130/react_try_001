@@ -22,6 +22,7 @@ import TaskList from './pages/missioncontorl.jsx';
 const App = () => {
   return (
     <Router>
+      <div className='app'>
       <div className="app-container">
         <header className="app-header">
           <h1 className="app-title">React 学习</h1>
@@ -92,6 +93,7 @@ const App = () => {
             <Route path="/task" element={<TaskList />} />
           </Routes>
         </main>
+      </div>
       </div>
     </Router>
   );

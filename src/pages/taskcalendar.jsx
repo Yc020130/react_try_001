@@ -29,9 +29,9 @@ const TaskCalendar = ({ stats }) => {
         tooltipDataAttrs={(value) => ({
           'data-tip': `${value.date}: 完成 ${value.count || 0} 项`,
         })}
-        gutterSize={2}
+        gutterSize={1}
         showWeekdayLabels={false}
-        squareSize={10}
+        squareSize={5}
       />
     </div>
   );
