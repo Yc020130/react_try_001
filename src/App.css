@@ -43,13 +43,13 @@ body {
   color: #ffffff;
   text-decoration: none;
   padding: 0.3rem 0.6rem;
-  background-color: #0366d6;
+  background-color: #373e47;
   border-radius: 6px;
   transition: background-color 0.2s ease-in-out;
 }
 
 .app-nav a:hover {
-  background-color: #005cc5;
+  background-color: rgb(127, 143, 160);
 }
 
 .app-main {

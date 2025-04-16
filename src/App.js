@@ -18,6 +18,7 @@ import DeleteNameList from './pages/deleteNameList.jsx';
 import TestPage from './pages/TestPage.jsx';
 import BookTracker from './pages/book.jsx';
 import TaskList from './pages/missioncontorl.jsx';
+import Improve from './pages/Improve.jsx';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <p className='p1'>Welcome Jared's Study Zone😎</p>
           <nav className="app-nav">
             <Link to="/">练习题</Link>
+            <Link to="/improve">进阶练习</Link>
             <Link to="/tests">章节测试</Link>
             <Link to="/book">读书追踪项目练习</Link>
             <Link to="/task">任务清单项目练习</Link>
@@ -92,6 +94,7 @@ const App = () => {
             <Route path="/tests" element={<TestPage />} />
             <Route path="/book" element={<BookTracker />} />
             <Route path="/task" element={<TaskList />} />
+            <Route path="/improve" element={<Improve />} />
           </Routes>
         </main>
       </div>
