@@ -19,6 +19,8 @@ import TestPage from './pages/TestPage.jsx';
 import BookTracker from './pages/book.jsx';
 import TaskList from './pages/missioncontorl.jsx';
 import Improve from './pages/Improve.jsx';
+import Ex from './pages/ex.jsx';
+import Knowedge from './pages/Knowedge.jsx';
 
 const App = () => {
   return (
@@ -29,11 +31,11 @@ const App = () => {
           <h1 className="app-title">Personal Develop</h1>
           <p className='p1'>Welcome Jared's Study Zone😎</p>
           <nav className="app-nav">
-            <Link to="/">练习题</Link>
-            <Link to="/improve">进阶练习</Link>
-            <Link to="/tests">章节测试</Link>
-            <Link to="/book">读书追踪项目练习</Link>
-            <Link to="/task">任务清单项目练习</Link>
+            <Link to="/">🧠练习题</Link>
+            <Link to="/improve">🚀进阶学习</Link>
+            <Link to="/tests">🧩章节测试</Link>
+            <Link to="/book">🏆读书追踪项目</Link>
+            <Link to="/task">📥任务清单项目</Link>
           </nav>
         </header>
 
@@ -94,7 +96,12 @@ const App = () => {
             <Route path="/tests" element={<TestPage />} />
             <Route path="/book" element={<BookTracker />} />
             <Route path="/task" element={<TaskList />} />
-            <Route path="/improve" element={<Improve />} />
+            <Route path="/improve" element={<Improve />}>
+              {/* 默认显示 Knowedge 组件 */}
+              <Route index element={<Knowedge />} />
+              <Route path="knowledge" element={<Knowedge />} />
+              <Route path="exercise" element={<Ex />} />
+            </Route>
           </Routes>
         </main>
       </div>
