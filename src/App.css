@@ -22,9 +22,18 @@ body {
 }
 
 .app-header {
-  background-color: #24292f;
-  padding: 1rem;
   border-radius: 6px;
+  background-image: url('/public/hbg.gif'); /* 注意前面加 / 表示从 public 路径 */
+  background-size: cover;      /* 或 contain，根据需要 */
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white; /* 根据背景调整字体颜色 */
+  padding: 20px;
+  text-align: left;
+}
+.header-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明遮罩 */
+  padding: 30px;
 }
 
 .app-title {
