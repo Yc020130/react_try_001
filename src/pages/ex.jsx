@@ -1,6 +1,7 @@
 import React from "react";
-import './improve.css'
+import './improve.css';
 import ColorApp from "./colorcontrol";
+import App2 from "./Rating";
 
 const Ex =()=>{
     return(
@@ -68,6 +69,14 @@ const Ex =()=>{
             <code><p>🔨运行结果:</p>
                 <ColorApp />
             </code>
+            <div>
+                <h2>🌟二、评分系统</h2>
+                <code>
+                    <App2 />
+                </code>
+            </div>
+            <div>
+            </div>
         </div>
     )
 }
