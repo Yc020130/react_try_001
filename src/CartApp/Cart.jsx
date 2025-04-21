@@ -6,7 +6,7 @@ function Cart() {
 
     return(
         <div>
-            <h2>购物车数量为:{cartCount}</h2>
+            <p>购物车数量为:{cartCount}</p>
         </div>
     )
 }

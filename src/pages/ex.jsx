@@ -2,6 +2,8 @@ import React from "react";
 import './improve.css';
 import ColorApp from "./colorcontrol";
 import App2 from "./Rating";
+import CartApp from "../CartApp/CartApp";
+import CartApp2 from "../components/Cart/CartApp2";
 
 const Ex =()=>{
     return(
@@ -76,6 +78,12 @@ const Ex =()=>{
                 </code>
             </div>
             <div>
+                <h2>🌟三、Context购物车示例</h2>
+                <CartApp />
+            </div>
+            <div>
+                <h2>🌟四、Context购物车示例2</h2>
+                <code><CartApp2 /></code>
             </div>
         </div>
     )

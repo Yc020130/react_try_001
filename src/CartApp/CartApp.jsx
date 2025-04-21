@@ -8,7 +8,7 @@ function CartApp() {
   return (
     <CartProvider>
       <div>
-        <h1>🛒 购物车子模块</h1>
+        <p>🛒 购物车子模块</p>
         <Cart />
         <CartControls />
       </div>

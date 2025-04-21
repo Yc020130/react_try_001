@@ -9,9 +9,9 @@ export const CartProvider = ({ children }) =>{
     const decrease = () => setCartCount(cartCount - 1);
 
     return(
-        <CartContext.Previder value={{ cartCount, increase, decrease }}>
+        <CartContext.Provider value={{ cartCount, increase, decrease }}>
             {children}
-        </CartContext.Previder>
+        </CartContext.Provider>
     )
 }
 
